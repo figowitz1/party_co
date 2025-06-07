@@ -66,3 +66,11 @@ Nombre          | Tipo doc | NIT       | ...
 Juan Pérez      | CC       |           |
 Empresa XYZ     | NIT      | 123456789 |
 
+
+¿Cómo se usa este módulo en la práctica?
+Al crear/editar un Tercero, ahora aparecen los nuevos campos.
+
+Si se selecciona "NIT" como tipo de documento, el sistema validará que el campo NIT no esté vacío.
+
+En las listas de Terceros, se pueden ver/filtrar/ordenar por estos campos.
+
