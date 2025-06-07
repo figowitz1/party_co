@@ -2,3 +2,67 @@ https://github.com/tryton-ar/party_ar
 
 El código que has compartido y las mejoras que te sugerí conforman un módulo de extensión para Tryton 7.6 que personaliza el modelo estándar party.party (Terceros/Contactos) para añadir campos específicos de identificación tributaria, típicamente usado en países como Colombia. Aquí está el resumen detallado:
 
+
+1. party.py (Modelo)
+Qué hace:
+
+Extiende el modelo party.party (Terceros/Contactos) para agregar:
+
+nit: Campo para almacenar el Número de Identificación Tributaria (NIT).
+
+tipo_documento: Selección entre tipos de documento (Cédula, NIT, Cédula de extranjería).
+
+Mejoras clave:
+
+Validación básica para asegurar que si tipo_documento = nit, el campo nit sea obligatorio.
+
+Soporte para traducciones (i18n) usando gettext.
+
+Textos de ayuda (help) para los campos.
+
+2. tryton.cfg (Configuración del módulo)
+Qué hace:
+
+Declara que el módulo depende del módulo party (estándar de Tryton).
+
+Especifica los archivos XML con las vistas personalizadas (party_form.xml y party_list.xml).
+
+3. __init__.py (Registro del módulo)
+Qué hace:
+
+Registra el modelo personalizado Party en el sistema Tryton al cargar el módulo.
+
+4. view/party_form.xml (Vista formulario)
+Qué hace:
+
+Extiende el formulario estándar de Terceros para mostrar los nuevos campos (nit y tipo_documento).
+
+Los campos se agregan en un grupo llamado "Información adicional" con diseño de 2 columnas.
+
+Ejemplo visual:
+
+text
+[Información básica]
+Nombre:    [__________]
+Teléfono:  [__________]
+
+[Información adicional]
+NIT:       [__________]
+Tipo doc:  [▼ NIT_____]
+5. view/party_list.xml (Vista de lista/árbol)
+Qué hace:
+
+Extiende la vista de lista estándar de Terceros para mostrar:
+
+El tipo_documento y nit como columnas adicionales.
+
+Los campos aparecen después del nombre del tercero.
+
+Ejemplo visual:
+
+text
+Nombre          | Tipo doc | NIT       | ...
+----------------|----------|-----------|
+Juan Pérez      | CC       |           |
+Empresa XYZ     | NIT      | 123456789 |
+
