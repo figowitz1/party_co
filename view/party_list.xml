@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<tryton>
+  <data>
+    <!-- Vista de lista para party.party -->
+    <record model="ir.ui.view" id="party_tree">
+      <field name="model">party.party</field>
+      <field name="inherit" ref="party.party_tree"/>
+      <field name="xpath" expr="//field[@name='name']" position="after">
+        <field name="tipo_documento" widget="selection"/>
+        <field name="nit"/>
+      </field>
+    </record>
+    
+    <!-- Definición de la vista lista -->
+    <record model="ir.ui.view" id="party_co_party_tree" priority="20">
+      <field name="model">party.party</field>
+      <field name="type">tree</field>
+      <field name="name">party_co_tree</field>
+    </record>
+  </data>
+</tryton>
