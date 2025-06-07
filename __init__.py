@@ -11,14 +11,17 @@ from . import afip
 
 def register():
     Pool.register(
-        #afip.PyAfipWsWrapper,
-        #afip.AFIPCountry,
+        afip.PyAfipWsWrapper,
+        afip.AFIPCountry,
         company.Company,
         party.Configuration,
-        #party.AFIPVatCountry,
+        party.AFIPVatCountry,
         party.Party,
         party.PartyIdentifier,
-        #party.GetAFIPDataStart,
+        party.GetAFIPDataStart,
         party.Cron,
         address.Address,
         module='party_ar', type_='model')
+    Pool.register(
+        party.GetAFIPData,
+        module='party_ar', type_='wizard')
