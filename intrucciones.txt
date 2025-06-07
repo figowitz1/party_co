@@ -1,2 +1,4 @@
 https://github.com/tryton-ar/party_ar
 
+El código que has compartido y las mejoras que te sugerí conforman un módulo de extensión para Tryton 7.6 que personaliza el modelo estándar party.party (Terceros/Contactos) para añadir campos específicos de identificación tributaria, típicamente usado en países como Colombia. Aquí está el resumen detallado:
+
