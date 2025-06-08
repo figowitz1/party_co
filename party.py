@@ -10,4 +10,4 @@ class Party(metaclass=PoolMeta):
         ('cc', 'Cédula de Ciudadanía'),
         ('nit', 'NIT'),
         ('ce', 'Cédula de Extranjería'),
-        ], 'Tipo de Documento'
+        ], 'Tipo de Documento')
